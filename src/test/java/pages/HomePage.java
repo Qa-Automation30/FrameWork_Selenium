@@ -9,13 +9,15 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class HomePage {
+    WebDriver driver;
     public HomePage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//section[@id='products']//div[@class='row']/div")
     private List<WebElement> productNames;
 
-    void selectSpecificProduct(String _productName){
+    public void selectSpecificProduct(String _productName) throws InterruptedException {
+        Thread.sleep(3000);
       WebElement result =  productNames.
               stream().
               filter(p->p.findElement(By.tagName("b")).getText().equals(_productName)).

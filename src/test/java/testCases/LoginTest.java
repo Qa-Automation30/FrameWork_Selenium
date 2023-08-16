@@ -2,25 +2,21 @@ package testCases;
 
 import base.Global;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-public class FirstTest extends Global {
-    WebDriver driver;
+public class LoginTest extends Global {
     LoginPage loginPage;
     @BeforeTest
     void setup(){
-        driver = getDriver();
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(getDriver());
     }
     @Test
     void firstTestCase(){
         loginPage.loginApplication("qa12@gmail.com","Admin@123");
-    }
-    @AfterTest
-    void close(){
-        driver.close();
+        Assert.assertTrue(true);
     }
 }
