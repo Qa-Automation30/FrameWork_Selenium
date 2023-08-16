@@ -16,6 +16,11 @@ public class HomePage {
     private List<WebElement> productNames;
 
     void selectSpecificProduct(String _productName){
-        productNames.stream().filter(p->p.findElement(By.tagName("b")).getText().equals(_productName)).findFirst().orElse(null);
+      WebElement result =  productNames.
+              stream().
+              filter(p->p.findElement(By.tagName("b")).getText().equals(_productName)).
+              findFirst().
+              orElse(null);
+      result.findElement(By.xpath("//div[@class='card-body']//button[text()=' Add To Cart']")).click();
     }
 }

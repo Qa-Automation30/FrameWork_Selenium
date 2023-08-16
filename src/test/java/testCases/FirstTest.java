@@ -17,8 +17,7 @@ public class FirstTest extends Global {
     }
     @Test
     void firstTestCase(){
-        String s = loginPage.loginApplication("qa12@gmail.com","Admin@123");
-        System.out.println(s);
+        loginPage.loginApplication("qa12@gmail.com","Admin@123");
     }
     @AfterTest
     void close(){
