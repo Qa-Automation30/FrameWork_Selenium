@@ -13,7 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class HomePage extends Global {
+public class HomePage {
+    CartPage cartPage;
     public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -37,6 +38,6 @@ public class HomePage extends Global {
     }
     public CartPage moveToCart(){
         cartButton.click();
-        return new CartPage(getDriver());
+        return cartPage;
     }
 }

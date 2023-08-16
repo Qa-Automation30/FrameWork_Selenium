@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends Global {
+public class LoginPage {
+    HomePage homePage;
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
@@ -21,6 +22,6 @@ public class LoginPage extends Global {
         userNameInput.sendKeys(userName);
         pwdInput.sendKeys(password);
         submitButton.click();
-        return new HomePage(getDriver());
+        return homePage;
     }
 }

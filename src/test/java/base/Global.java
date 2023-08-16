@@ -11,10 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import java.time.Duration;
 
 public class Global {
-    @BeforeSuite
-    void setup(){
-        System.out.println("test1");
-    }
+
     static WebDriver driver;
     public WebDriver getDriver(){
         if(driver==null){
