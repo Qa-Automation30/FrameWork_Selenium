@@ -23,5 +23,6 @@ public class HomePageTest extends Global {
         homePage.moveToCart();
         String str = cartPage.getTheSelectedItem(productName);
         Assert.assertEquals(str,productName);
+        cartPage.clickCheckout();
     }
 }

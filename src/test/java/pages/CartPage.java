@@ -13,9 +13,15 @@ public class CartPage {
     }
     @FindBy(xpath = "//div[@class='cartSection']/h3")
     private List<WebElement> cartSelectionList;
+    @FindBy(xpath = "//button[text()='Checkout']")
+    private WebElement checkout;
 
     public String getTheSelectedItem(String _productName){
         WebElement element = cartSelectionList.stream().filter(s->s.getText().equals(_productName)).findFirst().orElse(null);
       return element.getText();
+    }
+    public void clickCheckout()
+    {
+        checkout.click();
     }
 }
