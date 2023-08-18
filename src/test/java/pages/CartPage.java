@@ -26,9 +26,9 @@ public class CartPage {
                 orElse(null);
       return element.getText();
     }
-    public CheckOutPage goToCheckOut()
+    public PlaceOrderPage goToCheckOut()
     {
         checkout.click();
-       return new CheckOutPage(driver);
+       return new PlaceOrderPage(driver);
     }
 }

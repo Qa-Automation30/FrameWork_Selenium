@@ -1,6 +1,8 @@
 package testCases;
 
+import base.Messages;
 import jdk.jfr.Description;
+import pages.HeaderPage;
 import testCases.baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -15,13 +17,15 @@ import java.util.List;
 public class LoginTest extends BaseTest {
     LandingPage loginPage;
     ProductsPage productsPage;
+    HeaderPage headerPage;
     @BeforeSuite
     void setup(){
         loginPage = new LandingPage(getDriver());
+        headerPage = new HeaderPage(getDriver());
     }
-    @Test
+    @Test(priority = 1)
     @Description("Test case to verify that user lands on Home page")
-    void firstTestCase() throws InterruptedException {
+    void verifyLogin() throws InterruptedException {
         // This is just data I am using to assert my test case
         List<String> list = new ArrayList<>();
         list.add("HOME");
@@ -30,7 +34,12 @@ public class LoginTest extends BaseTest {
         list.add("Sign Out");
         //===============================================
         productsPage = loginPage.loginApplication("qa12@gmail.com","Admin@123");
-        Assert.assertEquals(productsPage.getAllOptions(),list);
+        Assert.assertEquals(headerPage.getAllOptions(),list);
+    }
+    @Test(priority = 0)
+    @Description("Test case to verify error message when user enters wrong details")
+    void verifyErrorMessage() throws InterruptedException {
+        Assert.assertEquals(loginPage.loginInvalidCred("test","test"), Messages.Incorrect_email_or_password);
     }
     @AfterSuite
     void tearDown(){
