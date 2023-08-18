@@ -1,5 +1,6 @@
 package testCases;
 
+import base.Messages;
 import jdk.jfr.Description;
 import pages.CheckOutPage;
 import testCases.baseTest.BaseTest;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.ProductsPage;
+import testData.ShoppingCartTestData;
 
 public class ShoppingCartTest extends BaseTest {
     ProductsPage productsPage;
@@ -19,13 +21,13 @@ public class ShoppingCartTest extends BaseTest {
         cartPage = new CartPage(getDriver());
         checkOutPage = new CheckOutPage(getDriver());
     }
-    @Test
+    @Test(dataProvider = "shoppingData",dataProviderClass = ShoppingCartTestData.class)
     @Description("Test case to verify that user should get an error popup once all the fields are blanks")
-    void verifyShoppingCartTest() throws InterruptedException {
-        productsPage.selectSpecificProduct("ZARA COAT 3");
+    void verifyShoppingCartTest(String productName) throws InterruptedException {
+        productsPage.selectSpecificProduct(productName);
         productsPage.moveToCart();
-        Assert.assertEquals(cartPage.getTheSelectedItem("ZARA COAT 3"),"ZARA COAT 3");
+        Assert.assertEquals(cartPage.getTheSelectedItem(productName),"ZARA COAT 3");
         cartPage.clickCheckout();
-        Assert.assertEquals(checkOutPage.placeOrderBtn(),"Please Enter Full Shipping Information");
+        Assert.assertEquals(checkOutPage.placeOrderBtn(), Messages.please_Enter_Full_Shipping_Information);
     }
 }
