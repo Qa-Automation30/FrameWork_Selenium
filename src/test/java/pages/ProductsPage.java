@@ -23,8 +23,6 @@ public class ProductsPage extends AbstractComponent {
     private WebElement toastMessage;
     @FindBy(xpath = "//button[@class='btn btn-custom' and contains(text(),'Cart')]")
     private WebElement cartButton;
-    @FindBy(xpath = "//button[@class='btn btn-custom']")
-    private List<WebElement> allOptions;
 
     public void selectSpecificProduct(String _productName) throws InterruptedException {
         WebElement result = productNames.
@@ -37,16 +35,10 @@ public class ProductsPage extends AbstractComponent {
          */
         // Here we are adding the specific product to cart
         result.findElement(By.xpath("//div[@class='card-body']//button[text()=' Add To Cart']")).click();
-        visibilityOf(toastMessage);
+        invisibilityOf(toastMessage);
     }
     public CartPage goToCart(){
         cartButton.click();
         return new CartPage(driver);
-    }
-    public List<String> getAllOptions(){
-       List<String> options = allOptions.
-               stream().
-               map(op->op.getText().trim()).collect(Collectors.toList());
-       return options;
     }
 }

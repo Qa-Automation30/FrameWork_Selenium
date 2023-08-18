@@ -19,9 +19,19 @@ public class LandingPage {
     private WebElement submitButton;
 
     public ProductsPage loginApplication(String userName, String password){
+        userNameInput.clear();
         userNameInput.sendKeys(userName);
+        pwdInput.clear();
         pwdInput.sendKeys(password);
         submitButton.click();
         return new ProductsPage(driver);
+    }
+    public String loginInvalidCred(String userName, String password){
+        userNameInput.clear();
+        userNameInput.sendKeys(userName);
+        pwdInput.clear();
+        pwdInput.sendKeys(password);
+        submitButton.click();
+        return "Incorrect email or password.";
     }
 }
