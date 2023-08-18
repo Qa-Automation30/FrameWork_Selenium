@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LandingPage {
     WebDriver driver;
-    public LoginPage(WebDriver driver){
+    public LandingPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
     }
@@ -18,10 +18,10 @@ public class LoginPage {
     @FindBy(id = "login")
     private WebElement submitButton;
 
-    public HomePage loginApplication(String userName, String password){
+    public ProductsPage loginApplication(String userName, String password){
         userNameInput.sendKeys(userName);
         pwdInput.sendKeys(password);
         submitButton.click();
-        return new HomePage(driver);
+        return new ProductsPage(driver);
     }
 }

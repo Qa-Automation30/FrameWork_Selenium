@@ -1,6 +1,6 @@
 package pages;
 
-import base.Global;
+import base.AbstractComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HomePage extends Global {
-    WebDriver driver;
+public class ProductsPage extends AbstractComponent {
     CartPage cartPage;
-    public HomePage(WebDriver driver) {
+    public ProductsPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
-        this.driver=driver;
     }
     @FindBy(xpath = "//section[@id='products']//div[@class='row']/div")
     private List<WebElement> productNames;
@@ -36,7 +35,7 @@ public class HomePage extends Global {
          * below are the concept of scoping the driver.
          */
         result.findElement(By.xpath("//div[@class='card-body']//button[text()=' Add To Cart']")).click();
-        visibilityOf(toastMessage,driver);
+        visibilityOf(toastMessage);
     }
     public CartPage moveToCart(){
         cartButton.click();
