@@ -1,17 +1,13 @@
 package pages;
 
-import base.DynamicWaits;
-import base.Global;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HomePage {
     CartPage cartPage;
@@ -24,6 +20,8 @@ public class HomePage {
     private WebElement toastMessage;
     @FindBy(xpath = "//button[@class='btn btn-custom' and contains(text(),'Cart')]")
     private WebElement cartButton;
+    @FindBy(xpath = "//button[@class='btn btn-custom']")
+    private List<WebElement> allOptions;
 
     public void selectSpecificProduct(String _productName) throws InterruptedException {
         WebElement result = productNames.
@@ -39,5 +37,11 @@ public class HomePage {
     public CartPage moveToCart(){
         cartButton.click();
         return cartPage;
+    }
+    public List<String> getAllOptions(){
+       List<String> options = allOptions.
+               stream().
+               map(op->op.getText().trim()).collect(Collectors.toList());
+       return options;
     }
 }

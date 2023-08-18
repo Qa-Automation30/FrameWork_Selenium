@@ -1,13 +1,13 @@
 package testCases;
 
-import base.Global;
+import testCases.baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
 
-public class HomePageTest extends Global {
+public class HomePageTest extends BaseTest {
     HomePage homePage;
     CartPage cartPage;
     @BeforeTest
