@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class CartPage {
+    WebDriver driver;
     public CartPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        this.driver=driver;
     }
     @FindBy(xpath = "//div[@class='cartSection']/h3")
     private List<WebElement> cartSelectionList;
@@ -24,8 +26,9 @@ public class CartPage {
                 orElse(null);
       return element.getText();
     }
-    public void clickCheckout()
+    public CheckOutPage goToCheckOut()
     {
         checkout.click();
+       return new CheckOutPage(driver);
     }
 }

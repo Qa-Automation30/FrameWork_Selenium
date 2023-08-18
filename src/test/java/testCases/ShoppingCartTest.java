@@ -18,16 +18,14 @@ public class ShoppingCartTest extends BaseTest {
     @BeforeTest
     void setup(){
         productsPage = new ProductsPage(getDriver());
-        cartPage = new CartPage(getDriver());
-        checkOutPage = new CheckOutPage(getDriver());
     }
     @Test(dataProvider = "shoppingData",dataProviderClass = ShoppingCartTestData.class)
     @Description("Test case to verify that user should get an error popup once all the fields are blanks")
     void verifyShoppingCartTest(String productName) throws InterruptedException {
         productsPage.selectSpecificProduct(productName);
-        productsPage.moveToCart();
+        cartPage = productsPage.goToCart();
         Assert.assertEquals(cartPage.getTheSelectedItem(productName),"ZARA COAT 3");
-        cartPage.clickCheckout();
+        checkOutPage = cartPage.goToCheckOut();
         Assert.assertEquals(checkOutPage.placeOrderBtn(), Messages.please_Enter_Full_Shipping_Information);
     }
 }

@@ -11,10 +11,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductsPage extends AbstractComponent {
-    CartPage cartPage;
+    WebDriver driver;
     public ProductsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        this.driver=driver;
     }
     @FindBy(xpath = "//section[@id='products']//div[@class='row']/div")
     private List<WebElement> productNames;
@@ -38,9 +39,9 @@ public class ProductsPage extends AbstractComponent {
         result.findElement(By.xpath("//div[@class='card-body']//button[text()=' Add To Cart']")).click();
         visibilityOf(toastMessage);
     }
-    public CartPage moveToCart(){
+    public CartPage goToCart(){
         cartButton.click();
-        return cartPage;
+        return new CartPage(driver);
     }
     public List<String> getAllOptions(){
        List<String> options = allOptions.
