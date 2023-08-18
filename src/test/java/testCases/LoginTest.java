@@ -22,6 +22,7 @@ public class LoginTest extends BaseTest {
     @Test
     @Description("Test case to verify that user lands on Home page")
     void firstTestCase() throws InterruptedException {
+        // This is just data I am using to assert my test case
         List<String> list = new ArrayList<>();
         list.add("HOME");
         list.add("ORDERS");
