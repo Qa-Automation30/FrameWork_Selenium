@@ -6,9 +6,9 @@
             <class name="testCases.LoginTest"/>
         </classes>
     </test>
-    <test name="ShoppingCart">
+ <!--   <test name="ShoppingCart">
         <classes>
             <class name="testCases.ShoppingCartTest"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

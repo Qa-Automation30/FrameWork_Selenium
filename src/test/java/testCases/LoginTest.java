@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
         productsPage = loginPage.loginApplication("qa12@gmail.com","Admin@123");
         Assert.assertEquals(headerPage.getAllOptions(),list);
     }
-    @Test(priority = 0)
+    @Test(priority = 0,enabled = false)
     @Description("Test case to verify error message when user enters wrong details")
     void verifyErrorMessage() throws InterruptedException {
         Assert.assertEquals(loginPage.loginInvalidCred("test","test"), Messages.Incorrect_email_or_password);

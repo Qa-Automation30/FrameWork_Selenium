@@ -12,8 +12,6 @@ import pages.CartPage;
 import pages.ProductsPage;
 import testData.ShoppingCartTestData;
 
-import javax.swing.plaf.TableHeaderUI;
-
 public class ShoppingCartTest extends BaseTest {
     ProductsPage productsPage;
     CartPage cartPage;
@@ -45,5 +43,4 @@ public class ShoppingCartTest extends BaseTest {
         placeOrderPage.selectCountry("india");
         Assert.assertEquals(placeOrderPage.placeOrderBtn(), Messages.Order_Placed_Successfully);
     }
-
 }

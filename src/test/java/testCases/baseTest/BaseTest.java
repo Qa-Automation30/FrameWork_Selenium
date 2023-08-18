@@ -40,7 +40,6 @@ public class BaseTest {
         }
         return driver;
     }
-
     /**
      *  This method is responsible for to load the data from properties file
      * @return
