@@ -1,5 +1,6 @@
 package testCases;
 
+import jdk.jfr.Description;
 import testCases.baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -19,18 +20,16 @@ public class LoginTest extends BaseTest {
         loginPage = new LoginPage(getDriver());
     }
     @Test
+    @Description("Test case to verify that user lands on Home page")
     void firstTestCase() throws InterruptedException {
-        List<String> str = new ArrayList<>();
-        str.add("Home");
-        str.add("ORDERS");
-        str.add("Cart");
-        str.add("Sign Out");
+        List<String> list = new ArrayList<>();
+        list.add("HOME");
+        list.add("ORDERS");
+        list.add("Cart");
+        list.add("Sign Out");
         //===============================================
         homePage = loginPage.loginApplication("qa12@gmail.com","Admin@123");
-        Thread.sleep(3000);
-        System.out.println(homePage.getAllOptions());
-        Thread.sleep(3000);
-        Assert.assertEquals(homePage.getAllOptions(),str);
+        Assert.assertEquals(homePage.getAllOptions(),list);
     }
     @AfterSuite
     void tearDown(){

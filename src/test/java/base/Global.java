@@ -7,15 +7,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DynamicWaits {
-    WebDriver driver;
-    WebDriverWait wait;
-    public DynamicWaits(WebDriver driver){
-        this.driver=driver;
-    }
+public class Global {
+    static WebDriverWait wait;
 
-    public void invisibilityOf(WebElement element){
+    public static void invisibilityOf(WebElement element, WebDriver driver){
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+    public static void visibilityOf(WebElement element, WebDriver driver){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

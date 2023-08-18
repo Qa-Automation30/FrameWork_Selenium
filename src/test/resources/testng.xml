@@ -8,7 +8,7 @@
     </test>
     <test name="Home Test">
         <classes>
-            <class name="testCases.HomePageTest"/>
+            <class name="testCases.ShoppingCartTest"/>
         </classes>
     </test>
 </suite>

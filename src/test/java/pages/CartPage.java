@@ -17,7 +17,11 @@ public class CartPage {
     private WebElement checkout;
 
     public String getTheSelectedItem(String _productName){
-        WebElement element = cartSelectionList.stream().filter(s->s.getText().equals(_productName)).findFirst().orElse(null);
+        WebElement element = cartSelectionList.
+                stream().
+                filter(s->s.getText().equals(_productName)).
+                findFirst().
+                orElse(null);
       return element.getText();
     }
     public void clickCheckout()

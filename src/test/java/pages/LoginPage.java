@@ -6,8 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    HomePage homePage;
+    WebDriver driver;
     public LoginPage(WebDriver driver){
+        this.driver=driver;
         PageFactory.initElements(driver, this);
     }
     @FindBy(id = "userEmail")
@@ -21,6 +22,6 @@ public class LoginPage {
         userNameInput.sendKeys(userName);
         pwdInput.sendKeys(password);
         submitButton.click();
-        return homePage;
+        return new HomePage(driver);
     }
 }
