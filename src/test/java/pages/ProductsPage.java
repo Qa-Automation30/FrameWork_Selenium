@@ -34,6 +34,7 @@ public class ProductsPage extends AbstractComponent {
         /**
          * below are the concept of scoping the driver.
          */
+        // Here we are adding the specific product to cart
         result.findElement(By.xpath("//div[@class='card-body']//button[text()=' Add To Cart']")).click();
         visibilityOf(toastMessage);
     }
