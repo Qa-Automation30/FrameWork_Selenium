@@ -14,5 +14,6 @@ public class DemoTest {
         TravelHomePage travelHomePage = new TravelHomePage(driver);
         travelHomePage.goToTravelPage();
         travelHomePage.getFooterNavigation().selectOption();
+        travelHomePage.getHeaderNavigation().getSelectedItemName();
     }
 }

@@ -19,6 +19,10 @@ public class TravelHomePage {
      * So this is the footerSection WebElement >> which is having whole footerSection
      */
     By footerSection = By.id("traveller-home");
+    /**
+     * So this is the headerSection WebElement >> which is having whole headerSection
+     */
+    By headerSection = By.id("buttons");
 
     public TravelHomePage(WebDriver driver) {
         this.driver=driver;
@@ -28,7 +32,7 @@ public class TravelHomePage {
      * @return
      */
     public HeaderNavigationPage getHeaderNavigation(){
-        return new HeaderNavigationPage();
+        return new HeaderNavigationPage(headerSection,driver);
     }
 
     /**
