@@ -58,7 +58,7 @@ public class TravelHomePage {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
     }
     public void setFlightBookingStrategy(SearchFlights searchFlights, String origin,String destination){
-        searchFlights.availabilityOfFlights("","");
+        searchFlights.availabilityOfFlights(origin,destination);
     }
 
 }

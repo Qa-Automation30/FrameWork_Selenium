@@ -1,5 +1,6 @@
 package pages.designPatternsExplain.testCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -8,9 +9,11 @@ import pages.designPatternsExplain.pageComonents.MultiCity;
 import pages.designPatternsExplain.pageComonents.RoundTrip;
 
 public class DemoTest {
-
+    // Section Element
+    By sectionElement = By.id("flightSearchContainer");
     @Test
     void flightTest() throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         TravelHomePage travelHomePage = new TravelHomePage(driver);
@@ -23,8 +26,8 @@ public class DemoTest {
         /**
          * This shows the concept of Strategy Design pattern
          */
-        travelHomePage.setFlightBookingStrategy(new MultiCity(),"org","test");
-        travelHomePage.setFlightBookingStrategy(new RoundTrip(),"org","test");
+       // travelHomePage.setFlightBookingStrategy(new MultiCity(),"org","test");
+        travelHomePage.setFlightBookingStrategy(new RoundTrip(sectionElement,driver),"HYD","MAA");
 
     }
 }
