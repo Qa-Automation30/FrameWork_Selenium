@@ -3,6 +3,7 @@ package pages.anotherpages.MainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import pages.anotherpages.pageComonents.FooterNavigationPage;
 import pages.anotherpages.pageComonents.HeaderNavigationPage;
 
@@ -18,6 +19,10 @@ public class TravelHomePage {
     @FindBy(id = "traveller-home")
     private WebElement footerSection;
 
+    public TravelHomePage(WebDriver driver) {
+        this.driver=driver;
+        PageFactory.initElements(driver,this);
+    }
     /**
      * Component of HeaderNavigation
      * @return
@@ -32,6 +37,13 @@ public class TravelHomePage {
      */
     public FooterNavigationPage getFooterNavigation(){
         return new FooterNavigationPage(footerSection,driver);
+    }
+
+    /**
+     * Navigate to travel Page
+     */
+    public void goToTravelPage(){
+        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
     }
 
 }

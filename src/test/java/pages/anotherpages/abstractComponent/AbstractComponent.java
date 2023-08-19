@@ -13,7 +13,7 @@ public abstract class AbstractComponent {
         this.driver = driver;
     }
 
-    public WebElement findElement(WebElement element) {
-        return element.findElement((By) element);
-    }
+/*    public WebElement findElement(By element) {
+        return element.findElement(element);
+    }*/
 }

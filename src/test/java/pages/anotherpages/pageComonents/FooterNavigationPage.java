@@ -11,11 +11,14 @@ import pages.anotherpages.abstractComponent.AbstractComponent;
 
 public class FooterNavigationPage extends AbstractComponent {
     WebDriver driver;
+    By flights = By.xpath("//div[@id='traveller-home']//span[text()='Flights']");
     public FooterNavigationPage(WebElement element,WebDriver driver){
       super(element,driver);
+      this.driver=driver;
     }
 
-   public void selectOption(String _option){
-        findElement(driver.findElement(By.xpath("div[@id='traveller-home']//span[text()='"+_option+"']"))).click();
+   public void selectOption(String _option) throws InterruptedException {
+       // findElement(flights).click();
+        Thread.sleep(3000);
    }
 }
