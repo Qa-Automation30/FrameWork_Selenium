@@ -14,7 +14,6 @@ public class FooterNavigationPage extends AbstractComponent {
 
     public FooterNavigationPage(By by,WebDriver driver){
       super(by,driver);
-      this.driver=driver;
     }
 
     /**

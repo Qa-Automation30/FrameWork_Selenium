@@ -25,7 +25,6 @@ public class TravelHomePage {
 
     public TravelHomePage(WebDriver driver) {
         this.driver=driver;
-        PageFactory.initElements(driver,this);
     }
     /**
      * Component of HeaderNavigation >> which provides the object of the "HeaderNavigation"
