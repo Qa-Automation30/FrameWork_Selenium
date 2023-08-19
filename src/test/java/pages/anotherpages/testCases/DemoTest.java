@@ -13,6 +13,6 @@ public class DemoTest {
         driver.manage().window().maximize();
         TravelHomePage travelHomePage = new TravelHomePage(driver);
         travelHomePage.goToTravelPage();
-        travelHomePage.getFooterNavigation().selectOption("Flights");
+        travelHomePage.getFooterNavigation().selectOption();
     }
 }

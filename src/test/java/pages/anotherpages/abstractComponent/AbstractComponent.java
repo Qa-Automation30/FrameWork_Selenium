@@ -8,12 +8,12 @@ public abstract class AbstractComponent {
     WebElement element;
     WebDriver driver;
 
-    public AbstractComponent(WebElement element, WebDriver driver) {
-        this.element = element;
+    public AbstractComponent(By by, WebDriver driver) {
+        this.element = driver.findElement(by);
         this.driver = driver;
     }
 
-/*    public WebElement findElement(By element) {
-        return element.findElement(element);
-    }*/
+    public WebElement findElement(By by) {
+        return element.findElement(by);
+    }
 }
