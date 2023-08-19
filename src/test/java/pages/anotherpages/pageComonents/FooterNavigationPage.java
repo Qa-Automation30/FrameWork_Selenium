@@ -3,8 +3,7 @@ package pages.anotherpages.pageComonents;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import pages.anotherpages.AbstractComponent;
+import pages.anotherpages.abstractComponent.AbstractComponent;
 
 /**
  * This is the page component of the Main Page

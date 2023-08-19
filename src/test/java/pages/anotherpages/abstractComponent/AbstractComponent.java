@@ -1,4 +1,4 @@
-package pages.anotherpages;
+package pages.anotherpages.abstractComponent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
