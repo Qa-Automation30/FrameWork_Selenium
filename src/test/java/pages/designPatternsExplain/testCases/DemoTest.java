@@ -13,7 +13,14 @@ public class DemoTest {
         driver.manage().window().maximize();
         TravelHomePage travelHomePage = new TravelHomePage(driver);
         travelHomePage.goToTravelPage();
+        /**
+         * This shows the concept of SRP (Single responsibility principle)
+         */
         travelHomePage.getFooterNavigation().selectOption();
         travelHomePage.getHeaderNavigation().getSelectedItemName();
+        /**
+         * This shows the concept of Strategy Design pattern
+         */
+
     }
 }
