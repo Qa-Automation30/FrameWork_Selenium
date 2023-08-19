@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.designPatternsExplain.MainPage.TravelHomePage;
+import pages.designPatternsExplain.pageComonents.MultiCity;
+import pages.designPatternsExplain.pageComonents.RoundTrip;
 
 public class DemoTest {
 
@@ -21,6 +23,8 @@ public class DemoTest {
         /**
          * This shows the concept of Strategy Design pattern
          */
+        travelHomePage.setFlightBookingStrategy(new MultiCity(),"org","test");
+        travelHomePage.setFlightBookingStrategy(new RoundTrip(),"org","test");
 
     }
 }

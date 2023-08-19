@@ -2,8 +2,10 @@ package pages.designPatternsExplain.MainPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.designPatternsExplain.abstractComponent.SearchFlights;
 import pages.designPatternsExplain.pageComonents.FooterNavigationPage;
 import pages.designPatternsExplain.pageComonents.HeaderNavigationPage;
+import pages.designPatternsExplain.pageComonents.MultiCity;
 
 /**
  *  It is a kind of Main or Base Class page , which consist of sections like :
@@ -54,6 +56,9 @@ public class TravelHomePage {
      */
     public void goToTravelPage(){
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+    }
+    public void setFlightBookingStrategy(SearchFlights searchFlights, String origin,String destination){
+        searchFlights.availabilityOfFlights("","");
     }
 
 }
