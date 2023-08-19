@@ -1,4 +1,4 @@
-package pages.anotherpages.abstractComponent;
+package pages.designPatternsExplain.abstractComponent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

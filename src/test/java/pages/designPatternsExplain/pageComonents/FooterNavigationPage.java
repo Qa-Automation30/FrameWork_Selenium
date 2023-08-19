@@ -1,8 +1,8 @@
-package pages.anotherpages.pageComonents;
+package pages.designPatternsExplain.pageComonents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.anotherpages.abstractComponent.AbstractComponent;
+import pages.designPatternsExplain.abstractComponent.AbstractComponent;
 
 /**
  * This is the page component of the Main Page

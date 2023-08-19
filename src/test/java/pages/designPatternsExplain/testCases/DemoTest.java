@@ -1,9 +1,9 @@
-package pages.anotherpages.testCases;
+package pages.designPatternsExplain.testCases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import pages.anotherpages.MainPage.TravelHomePage;
+import pages.designPatternsExplain.MainPage.TravelHomePage;
 
 public class DemoTest {
 

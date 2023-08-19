@@ -1,12 +1,9 @@
-package pages.anotherpages.MainPage;
+package pages.designPatternsExplain.MainPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import pages.anotherpages.pageComonents.FooterNavigationPage;
-import pages.anotherpages.pageComonents.HeaderNavigationPage;
+import pages.designPatternsExplain.pageComonents.FooterNavigationPage;
+import pages.designPatternsExplain.pageComonents.HeaderNavigationPage;
 
 /**
  *  It is a kind of Main or Base Class page , which consist of sections like :
