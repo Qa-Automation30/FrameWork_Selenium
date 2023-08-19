@@ -9,8 +9,7 @@ import pages.designPatternsExplain.abstractComponent.AbstractComponent;
  */
 
 public class FooterNavigationPage extends AbstractComponent {
-    WebDriver driver;
-    By flights = By.xpath("//div[@id='traveller-home']//span[text()='Flights']");
+    By flights = By.xpath("//*[@id=\"buttons\"]/div/div/ul/li[1]/a/span[2]");
 
     public FooterNavigationPage(By by,WebDriver driver){
       super(by,driver);
