@@ -3,17 +3,18 @@ package pages.designPatternsExplain.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.designPatternsExplain.abstractComponent.SearchFlights;
+import pages.designPatternsExplain.abstractComponent.StrategyFactor;
 import pages.designPatternsExplain.pageComonents.FooterNavigationPage;
 import pages.designPatternsExplain.pageComonents.HeaderNavigationPage;
 import pages.designPatternsExplain.pageComonents.MultiCity;
 
 /**
- *  It is a kind of Main or Base Class page , which consist of sections like :
- *  1) Header navigation bar
- *  2) footer navigation bar
- *  3) MidSection
- *
- *  Note : It is a kind of Master class (It is basically the landing page of the Application)
+ * It is a kind of Main or Base Class page , which consist of sections like :
+ * 1) Header navigation bar
+ * 2) footer navigation bar
+ * 3) MidSection
+ * <p>
+ * Note : It is a kind of Master class (It is basically the landing page of the Application)
  */
 public class TravelHomePage {
     WebDriver driver;
@@ -27,38 +28,44 @@ public class TravelHomePage {
     By headerSection = By.id("buttons");
 
     public TravelHomePage(WebDriver driver) {
-        this.driver=driver;
+        this.driver = driver;
     }
+
     /**
      * Component of HeaderNavigation >> which provides the object of the "HeaderNavigation"
+     *
      * @return
      */
-    public HeaderNavigationPage getHeaderNavigation(){
-        return new HeaderNavigationPage(headerSection,driver);
+    public HeaderNavigationPage getHeaderNavigation() {
+        return new HeaderNavigationPage(headerSection, driver);
     }
 
     /**
      * Component of footerNavigation >> which provides the object of the "FooterNavigationPage"
-     *
+     * <p>
      * Note : Imp point is that here you are navigating to the "FooterNavigationPage" class and
-     *        that class having "WebElements" which are related to that footer section only.
-     *        So the question is how selenium knows that you need to go only inside that footer section and find the elements ?
-     *        So we need to design our frameWork in such a way that it go and search only inside the footer Section.
-     *        have recorded one element above named as -> "footerSection".
+     * that class having "WebElements" which are related to that footer section only.
+     * So the question is how selenium knows that you need to go only inside that footer section and find the elements ?
+     * So we need to design our frameWork in such a way that it go and search only inside the footer Section.
+     * have recorded one element above named as -> "footerSection".
+     *
      * @return
      */
-    public FooterNavigationPage getFooterNavigation(){
-        return new FooterNavigationPage(footerSection,driver);
+    public FooterNavigationPage getFooterNavigation() {
+        return new FooterNavigationPage(footerSection, driver);
     }
 
     /**
      * Navigate to travel Page (landing page URL)
      */
-    public void goToTravelPage(){
+    public void goToTravelPage() {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
     }
-    public void setFlightBookingStrategy(SearchFlights searchFlights, String origin,String destination){
-        searchFlights.availabilityOfFlights(origin,destination);
+
+    public void setFlightBookingStrategy(String strategyType, String origin, String destination) {
+        StrategyFactor factor = new StrategyFactor(driver);
+        SearchFlights searchFlights = factor.createStrategy(strategyType);
+        searchFlights.availabilityOfFlights(origin, destination);
     }
 
 }
