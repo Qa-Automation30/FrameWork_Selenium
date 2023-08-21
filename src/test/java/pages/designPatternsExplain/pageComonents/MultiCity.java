@@ -20,5 +20,33 @@ public class MultiCity extends AbstractComponent implements SearchFlights {
 
     @Override
     public void availabilityOfFlights(String origin, String destination) {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        findElement(multiCity_rdo).click();
+        findElement(modalPopUp).click();
+        selectOriginCity(origin);
+        selectDestinationCity(destination);
+        selectDestinationCity2("BLR");
+
+    }
+    public void selectOriginCity(String city_origin){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        findElement(from).click();
+        findElement(By.xpath("//a[@value='"+city_origin+"']")).click();
+    }
+    public void selectDestinationCity(String city_destination){
+        findElement(to).click();
+        findElement(By.xpath("(//a[@value='"+city_destination+"'])[2]")).click();
+    }
+    public void selectDestinationCity2(String city_destination){
+        findElement(destination_2).click();
+        findElement(By.xpath("(//a[@value='"+city_destination+"'])[3]")).click();
     }
 }

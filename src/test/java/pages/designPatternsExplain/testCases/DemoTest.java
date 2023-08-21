@@ -26,8 +26,8 @@ public class DemoTest {
         /**
          * This shows the concept of Strategy Design pattern
          */
-       // travelHomePage.setFlightBookingStrategy(new MultiCity(),"org","test");
-        travelHomePage.setFlightBookingStrategy(new RoundTrip(sectionElement,driver),"HYD","MAA");
+       // travelHomePage.setFlightBookingStrategy(new RoundTrip(sectionElement,driver),"HYD","MAA");
+        travelHomePage.setFlightBookingStrategy(new MultiCity(sectionElement,driver),"HYD","MAA");
 
     }
 }
