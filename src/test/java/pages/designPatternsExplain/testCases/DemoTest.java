@@ -10,7 +10,7 @@ import pages.designPatternsExplain.pageComonents.RoundTrip;
 
 public class DemoTest {
     // Section Element
-    By sectionElement = By.id("flightSearchContainer");
+
     @Test
     void flightTest() throws InterruptedException {
 
@@ -27,7 +27,10 @@ public class DemoTest {
          * This shows the concept of Strategy Design pattern
          */
        // travelHomePage.setFlightBookingStrategy(new RoundTrip(sectionElement,driver),"HYD","MAA");
-        travelHomePage.setFlightBookingStrategy(new MultiCity(sectionElement,driver),"HYD","MAA");
+       // travelHomePage.setFlightBookingStrategy(new MultiCity(sectionElement,driver),"HYD","MAA");
+
+        travelHomePage.setFlightBookingStrategy("multicity","HYD","MAA");
+
 
     }
 }
