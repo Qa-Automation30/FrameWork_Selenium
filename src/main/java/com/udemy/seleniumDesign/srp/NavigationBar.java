@@ -28,7 +28,6 @@ public class NavigationBar extends AbstractComponent {
 
     @Override
     public boolean isDisplayed() {
-        explicitWait(function);
-        return false;
+       return explicitWait(function);
     }
 }
