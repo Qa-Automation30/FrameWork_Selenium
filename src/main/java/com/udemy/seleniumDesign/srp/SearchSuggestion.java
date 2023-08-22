@@ -18,8 +18,7 @@ public class SearchSuggestion extends AbstractComponent {
     Function<WebDriver, Boolean> result = d->this.suggestions.size()>5;
 
     public SearchSuggestion(final WebDriver driver){
-        PageFactory.initElements(driver,this);
-        this.driver=driver;
+        super(driver);
     }
     public void clickSuggestionByIndex(int index){
     suggestions.get(index-1).click();
