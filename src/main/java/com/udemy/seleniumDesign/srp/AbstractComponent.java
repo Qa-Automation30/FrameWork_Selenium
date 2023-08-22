@@ -18,13 +18,7 @@ public abstract class AbstractComponent {
         this.wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         PageFactory.initElements(driver,this);
     }
-
-
-    public void visibilityOfElement(WebDriver driver, WebElement element){
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-    public void waitUntilToLoadResults(Function<WebDriver,Boolean> function){
+    public void explicitWait(Function<WebDriver,Boolean> function){
         wait.until(function);
     }
 }

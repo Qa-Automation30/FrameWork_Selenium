@@ -25,7 +25,7 @@ public class SearchSuggestion extends AbstractComponent {
     }
     @Override
     public boolean isDisplayed() {
-        waitUntilToLoadResults(result);
+        explicitWait(result);
         return false;
     }
 }
