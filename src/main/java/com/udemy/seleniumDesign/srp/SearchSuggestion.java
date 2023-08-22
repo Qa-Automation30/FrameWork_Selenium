@@ -14,7 +14,7 @@ public class SearchSuggestion extends AbstractComponent {
     WebDriver driver;
     @FindBy(xpath = "//ul[@role='listbox']//li[@class='sbct']")
     private List<WebElement> suggestions;
-    // TODO -> This is lambda Expression from java 8
+    // TODO -> This is lambda Expression from java 8 [This is imp]
     Function<WebDriver, Boolean> result = d->this.suggestions.size()>5;
 
     public SearchSuggestion(final WebDriver driver){
@@ -25,7 +25,6 @@ public class SearchSuggestion extends AbstractComponent {
     }
     @Override
     public boolean isDisplayed() {
-        explicitWait(result);
-        return false;
+       return explicitWait(result);
     }
 }

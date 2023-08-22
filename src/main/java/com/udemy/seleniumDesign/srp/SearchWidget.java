@@ -10,6 +10,8 @@ public class SearchWidget extends AbstractComponent {
     WebDriver driver;
     @FindBy(name="q")
     private WebElement searchBox;
+
+    // TODO -> This is lambda Expression from java 8 [This is imp]
     Function<WebDriver,Boolean> function = d->searchBox.isDisplayed();
 
     public SearchWidget(final WebDriver driver){
@@ -21,7 +23,6 @@ public class SearchWidget extends AbstractComponent {
     }
     @Override
     public boolean isDisplayed() {
-        explicitWait(function);
-        return searchBox.isDisplayed();
+       return explicitWait(function);
     }
 }

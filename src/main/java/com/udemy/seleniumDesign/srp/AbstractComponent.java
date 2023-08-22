@@ -18,7 +18,7 @@ public abstract class AbstractComponent {
         this.wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         PageFactory.initElements(driver,this);
     }
-    public void explicitWait(Function<WebDriver,Boolean> function){
-        wait.until(function);
+    public Boolean explicitWait(Function<WebDriver,Boolean> function){
+       return wait.until(function);
     }
 }
